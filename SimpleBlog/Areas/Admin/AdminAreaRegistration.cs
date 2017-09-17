@@ -8,7 +8,7 @@ namespace SimpleBlog.Areas.Admin
         {
             get 
             {
-                return "Admin";
+                return "admin";
             }
         }
 
@@ -16,7 +16,7 @@ namespace SimpleBlog.Areas.Admin
         {
             context.MapRoute(
                 "Admin_default",
-                "Admin/{controller}/{action}/{id}",
+                "admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
