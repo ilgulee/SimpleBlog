@@ -27,6 +27,12 @@ namespace SimpleBlog.Controllers
             {
                 return View(form);
             }
+
+            if (form.Username != "rainbow dash")
+            {
+                ModelState.AddModelError("Username","Username or Password isn't 20% cooler");
+                return View(form);
+            }
             return Content("The form is valid");
         }
     }
