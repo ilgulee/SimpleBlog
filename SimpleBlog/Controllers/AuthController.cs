@@ -14,7 +14,7 @@ namespace SimpleBlog.Controllers
         {
             return View(new AuthLogin
             {
-                Test = "This is my test value set in my controller"
+                
             });
         }
 
@@ -23,8 +23,11 @@ namespace SimpleBlog.Controllers
         [HttpPost]
         public ActionResult Login(AuthLogin form)
         {
-            form.Test = "This is a value set in my post action";
-            return View(form);
+            if (!ModelState.IsValid)
+            {
+                return View(form);
+            }
+            return Content("The form is valid");
         }
     }
 }
